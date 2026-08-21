@@ -1,0 +1,14 @@
+import nltk
+
+patterns = [
+    (r'.*ing$', 'VBG'),
+    (r'.*ed$', 'VBD'),
+    (r'.*es$', 'VBZ'),
+    (r'.*', 'NN')
+]
+
+tagger = nltk.RegexpTagger(patterns)
+
+words = ["playing", "walked", "goes", "computer"]
+
+print(tagger.tag(words))
